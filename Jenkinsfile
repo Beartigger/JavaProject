@@ -3,17 +3,18 @@ pipeline {
 	
 	stages {
 	   stage ('build') {
-	      steps {
-	      sh 'ant -f build.xml -v'
-		  }
+			environment {
+				MAJOR_VERSION = "1.0"
+				}
+			steps {
+				sh 'ant -f build.xml -v'
+			}
 		}
 	}
 	post {
-	   always {
-	      archive 'dist/*.jar'
-	   
-	   
-	   }
+		always {
+			archive 'dist/*.jar'
+		}
 	
 	
 	}
