@@ -5,7 +5,7 @@ public class RectangleTest {
 	Rectangle MyRectangle = new Rectangle(5,6);
 	@Test
 	public void testGetArea() {
-		assertEquals(myRectangle.getArea(), 30);
+		asertEquals(myRectangle.getArea(), 30);
 	}
 	@Test
 	public void testGetParimeter() {
