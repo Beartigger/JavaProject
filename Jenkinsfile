@@ -2,6 +2,12 @@ pipeline {
 	agent any
 	
 	stages {
+	   Stage ('Unit Tests') {
+			steps {
+				sh 'ant -f test.xml -v '
+				junit 'reports/result.xml'
+			}
+		}
 	   stage ('build') {
 			environment {
 				MAJOR_VERSION = "1.0"
